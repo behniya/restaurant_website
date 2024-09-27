@@ -1,0 +1,71 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for content */
+.container {
+    background-color: rgba(255, 255, 255, 0.85); /* White background with some transparency */
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Slight shadow for a 3D effect */
+}
+
+/* Styling for the title */
+h1 {
+    color: #333;
+    font-size: 3em;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+/* Button styling */
+.btn {
+    display: block;
+    width: 250px;
+    margin: 15px auto;
+    padding: 15px 0;
+    background-color: #28a745; /* Green color for the buttons */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect */
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-3px); /* Slight hover lift */
+}
+
+.btn:active {
+    background-color: #1e7e34; /* Even darker green when clicked */
+    transform: translateY(0); /* No lift on click */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .btn {
+        width: 80%;
+        font-size: 1em;
+    }
+}

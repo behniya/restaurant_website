@@ -1,0 +1,111 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    background-color: #f8f9fa;
+    background-image: url('../images/profile_background_img.jpg'); /* Update with the correct path */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 20px;
+}
+
+/* Container for profile form */
+.profile-container {
+    background-color: rgba(255, 255, 255, 0.95); /* White background with slight transparency */
+    padding: 30px;
+    border-radius: 10px;
+    width: 75%; /* Set width to 75% of the page */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
+    text-align: left;
+    margin-top: 20px;
+    float: left; /* Align the container to the left */
+}
+
+/* Heading styles */
+h1 {
+    color: #333;
+    font-size: 2em; /* Font size remains the same */
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Form styling */
+form {
+    margin-top: 20px;
+}
+
+/* Form fields styling */
+input, textarea, select {
+    width: 100%; /* Full width inside the container */
+    padding: 12px; /* Padding remains the same */
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em; /* Font size remains the same */
+    background-color: #fff;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+button {
+    width: 100%; /* Full width inside the container */
+    padding: 12px; /* Padding remains the same */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em; /* Button font size remains the same */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+}
+
+button:active {
+    background-color: #1e7e34;
+    transform: translateY(0);
+}
+
+/* Link styling */
+a {
+    display: block;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+    text-align: left;
+    font-size: 1em;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 25px;
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    button {
+        font-size: 1em;
+    }
+}

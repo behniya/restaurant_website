@@ -1,0 +1,133 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/restaurant_background_img.jpg'); /* Update with the correct path */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Container for content */
+.container {
+    background-color: rgba(255, 255, 255, 0.85); /* White background with some transparency */
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 150px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Slight shadow for a 3D effect */
+}
+
+/* Styling for the title */
+h1 {
+    color: #333;
+    font-size: 3em;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+/* Button styling */
+.btn {
+    display: block;
+    width: 250px;
+    margin: 15px auto;
+    padding: 15px 0;
+    background-color: #28a745; /* Green color for the buttons */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect */
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-3px); /* Slight hover lift */
+}
+
+.btn:active {
+    background-color: #1e7e34; /* Even darker green when clicked */
+    transform: translateY(0); /* No lift on click */
+}
+
+/* Logout Button Specific Styles (optional) */
+.logout-btn {
+    width: 150px; /* Smaller width */
+    padding: 8px 0; /* Smaller padding */
+    background-color: #dc3545; /* Red color for logout */
+    font-size: 0.9em; /* Smaller font size */
+    border-radius: 8px; /* Keep consistent with other buttons */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .btn {
+        width: 80%;
+        font-size: 1em;
+    }
+}
+
+/* Style for the navigation bar */
+nav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.navbar {
+    backdrop-filter: blur(30px);
+    box-shadow: Opx Opx 30px rgba(227, 228, 237, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Ensure the logout button maintains the same styles as other buttons */
+.logout-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Style for the container to ensure content is centered */
+.container {
+    text-align: center;
+    margin-top: 150px; /* Space below the navigation bar */
+}
+
+/* Container for buttons to align them side by side */
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns the buttons to the right */
+    align-items: center;       /* Centers them vertically if needed */
+    gap: 10px; /* Adds space between the profile and logout buttons */
+}
+
+
+/* Profile Button Specific Styles */
+.profile-btn {
+    width: 150px; /* Same width as the logout button */
+    padding: 8px 0; /* Same padding as the logout button */
+    background-color: #17a2b8; /* Teal */
+    font-size: 0.9em; /* Same font size */
+    border-radius: 8px; /* Same border radius */
+}
+
+/* Profile Button Hover Styles */
+.profile-btn:hover {
+    background-color: #138496; /* Darker Teal on hover */
+}

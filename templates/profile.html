@@ -1,0 +1,46 @@
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Profile</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Behniya Ganji">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+        <script>
+            // JavaScript to clear input on focus if the value hasn't changed
+            document.addEventListener("DOMContentLoaded", function () {
+                const inputs = document.querySelectorAll("input");
+
+                inputs.forEach(function (input) {
+                    const defaultValue = input.value; // Save the default value
+                    
+                    input.addEventListener("focus", function () {
+                        if (input.value === defaultValue) {
+                            input.value = ''; // Clear the input field on focus
+                        }
+                    });
+
+                    input.addEventListener("blur", function () {
+                        if (input.value.trim() === '') {
+                            input.value = defaultValue; // Restore the value if the field is left empty
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="profile-container">
+            <h1>Profile</h1>
+            <h2>Update Your Information</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit">Update</button>
+            </form>
+            <a href="{% url 'password_change' %}">Change Password</a>
+        </div>
+    </body>
+</html>

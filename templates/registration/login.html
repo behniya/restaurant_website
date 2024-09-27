@@ -1,0 +1,26 @@
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Log In</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">  <!-- Link to the login.css file -->
+        <meta charset="utf-8">
+        <meta name="author" content="Behniya Ganji">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Log In</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit">Log In</button>
+            </form>
+            <div class="text-center">
+                <a href="{% url 'password_reset' %}" class="forgot-password">Forget Password?</a>
+            </div>
+        </div>
+    </body>
+</html>

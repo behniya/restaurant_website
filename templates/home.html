@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Behniya Ganji">
+    <title>Restaurant Home</title>
+    <!-- Link to the CSS file -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <nav>
+            <div class="button-container">
+                <a href="{% url 'profile' %}" class="btn profile-btn">Profile</a>
+                <form method="POST" action="{% url 'logout' %}" class="logout-form">
+                    {% csrf_token %}
+                    <button type="submit" class="btn logout-btn">Logout</button>
+                </form>
+            </div>
+        </nav>
+    {% endif %}
+    {% if user.is_authenticated %}
+        <div class="container">
+            <h1>Welcome to Our Restaurant</h1>
+
+            <a href="#" class="btn">See Menu</a>
+        </div>
+    {% else %}
+        <div class="container">
+            <h1>Welcome to Our Restaurant</h1>
+
+            <!-- Buttons for login, sign-up, and see menu -->
+            <a href="{% url 'login' %}" class="btn">Login</a>
+            <a href="{% url 'signup' %}" class="btn">Sign Up</a>
+            <a href="#" class="btn">See Menu</a>
+            <p>
+                Every day
+                <br>
+                Open at: 12:00 PM - 16:00 PM and 19:00 PM - 11:30 PM
+            </p>
+        </div>
+    {% endif %}
+</body>
+</html>
