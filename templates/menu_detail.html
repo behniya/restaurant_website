@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ menu_item.name }} Details</title>
+    <title>{{ menu_items.name }} Details</title>
     {% load static %}
     <!--<link rel="stylesheet" href="{% static 'css/style.css' %}">-->
 </head>
 <body>
-    <h1>{{ menu_item.name }}</h1>
-    <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" class="menu-item-image">
-    <p>{{ menu_item.description }}</p>
-    <p>Price: {{ menu_item.price }} USD</p>
+    <h1>{{ menu_items.name }}</h1>
+    <img src="{{ menu_items.image.url }}" alt="{{ menu_items.name }}" class="menu-item-image">
+    <p>{{ menu_items.description }}</p>
+    <p>Price: {{ menu_items.price }} USD</p>
 
     <form method="POST" action="#">
         {% csrf_token %}
