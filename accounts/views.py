@@ -1,9 +1,9 @@
 from django.shortcuts import render , redirect
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView , ListView , DetailView
 from django.contrib.auth.views import LogoutView , PasswordChangeView , LoginView
-from .forms import CustomUserCreationForm , CustomUserChangeForm 
-from .models import CustomUser
+from .forms import CustomUserCreationForm , CustomUserChangeForm , MenuItemForm
+from .models import CustomUser , MenuItem
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import UpdateView
@@ -32,3 +32,15 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
 class CustomPasswordChangeView(PasswordChangeView):
     template_name = 'registration/password_change.html'
     success_url = reverse_lazy('password_change_done')
+
+class MenuItemListView(ListView):
+    model = MenuItem
+    form_class = MenuItemForm
+    template_name = 'menu_list.html'
+    context_object_name = 'menu_items'
+
+class MenuItemDetailView(DetailView):
+    model = MenuItem
+    form_class = MenuItemForm
+    template_name = 'menu_detail.html'
+    context_object_name = 'menu_items'

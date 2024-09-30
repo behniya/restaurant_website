@@ -1,0 +1,24 @@
+<!-- templates/menu/menu_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ menu_item.name }} Details</title>
+    {% load static %}
+    <!--<link rel="stylesheet" href="{% static 'css/style.css' %}">-->
+</head>
+<body>
+    <h1>{{ menu_item.name }}</h1>
+    <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" class="menu-item-image">
+    <p>{{ menu_item.description }}</p>
+    <p>Price: {{ menu_item.price }} USD</p>
+
+    <form method="POST" action="#">
+        {% csrf_token %}
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+        <button type="submit" class="btn">Add to Shopping Box</button>
+    </form>
+</body>
+</html>

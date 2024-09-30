@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django import forms
-from .models import CustomUser
+from .models import CustomUser , MenuItem
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
@@ -20,3 +20,8 @@ class CustomUserChangeForm(UserChangeForm):
             self.fields['password'].widget = forms.HiddenInput()  # Hide the password field
             self.fields['password'].label = ''  # Remove the label
             self.fields['password'].help_text = ''  # Remove the help text
+
+class MenuItemForm(forms.ModelForm):
+    class Meta:
+        model = MenuItem
+        fields = ['name' , 'description' , 'price' , 'image' , 'category']

@@ -25,7 +25,7 @@
         <div class="container">
             <h1>Welcome to Our Restaurant</h1>
 
-            <a href="#" class="btn">See Menu</a>
+            <a href="{% url 'menu_list' %}" class="btn">See Menu</a>
         </div>
     {% else %}
         <div class="container">
@@ -34,7 +34,7 @@
             <!-- Buttons for login, sign-up, and see menu -->
             <a href="{% url 'login' %}" class="btn">Login</a>
             <a href="{% url 'signup' %}" class="btn">Sign Up</a>
-            <a href="#" class="btn">See Menu</a>
+            <a href="{% url 'menu_list' %}" class="btn">See Menu</a>
             <p>
                 Every day
                 <br>

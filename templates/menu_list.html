@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/menu_list.css' %}">
+    <script>
+        function searchItems() {
+            const input = document.getElementById('search-input').value.toLowerCase();
+            const items = document.querySelectorAll('.menu-item');
+            items.forEach(item => {
+                const itemName = item.querySelector('h2').textContent.toLowerCase();
+                if (itemName.includes(input)) {
+                    item.style.display = 'block'; // Show item if it matches
+                } else {
+                    item.style.display = 'none'; // Hide item if it doesn't match
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Our Menu</h1>
+    
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for items..." onkeyup="searchItems()">
+    </div>
+
+    <!-- Navigation Bar for Sections -->
+    <div class="menu-nav">
+        <a href="#starters" class="nav-link">Starters</a>
+        <a href="#sushi-rolls" class="nav-link">Sushi Rolls</a>
+        <a href="#main-course" class="nav-link">Main Course</a>
+        <a href="#drinks" class="nav-link">Drinks</a>
+    </div>
+
+    <!-- Section for Starters -->
+    <div id="starters" class="menu-section">
+        <h2>Starters</h2>
+        <div class="menu-items">
+            {% for item in menu_items %}
+                {% if item.category == "starter" %}
+                    <div class="menu-item">
+                        <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-item-image">
+                        <h2>{{ item.name }}</h2>
+                        <p>{{ item.price }} USD</p>
+                        <a href="{% url 'menu_detail' item.pk %}" class="btn">View Details</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Section for Sushi Rolls -->
+    <div id="sushi-rolls" class="menu-section">
+        <h2>Sushi Rolls</h2>
+        <div class="menu-items">
+            {% for item in menu_items %}
+                {% if item.category == "sushi_roll" %}
+                    <div class="menu-item">
+                        <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-item-image">
+                        <h2>{{ item.name }}</h2>
+                        <p>{{ item.price }} USD</p>
+                        <a href="{% url 'menu_detail' item.pk %}" class="btn">View Details</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Section for Main Course -->
+    <div id="main-course" class="menu-section">
+        <h2>Main Course</h2>
+        <div class="menu-items">
+            {% for item in menu_items %}
+                {% if item.category == "main_course" %}
+                    <div class="menu-item">
+                        <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-item-image">
+                        <h2>{{ item.name }}</h2>
+                        <p>{{ item.price }} USD</p>
+                        <a href="{% url 'menu_detail' item.pk %}" class="btn">View Details</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Section for Drinks -->
+    <div id="drinks" class="menu-section">
+        <h2>Drinks</h2>
+        <div class="menu-items">
+            {% for item in menu_items %}
+                {% if item.category == "drink" %}
+                    <div class="menu-item">
+                        <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-item-image">
+                        <h2>{{ item.name }}</h2>
+                        <p>{{ item.price }} USD</p>
+                        <a href="{% url 'menu_detail' item.pk %}" class="btn">View Details</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
