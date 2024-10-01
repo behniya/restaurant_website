@@ -135,3 +135,69 @@ h1 {
     border-color: #007bff; /* Change border color on focus */
     outline: none; /* Remove outline */
 }
+
+/* Counter styles */
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Increase space between buttons and count */
+    margin-top: 10px;
+    justify-content: center; /* Center the counter buttons */
+}
+
+/* Simpler style for the - and + buttons */
+.counter-btn {
+    background-color: transparent; /* Transparent background */
+    color: #007bff; /* Blue color for the text */
+    border: 1px solid #007bff; /* Blue border */
+    border-radius: 4px; /* Rounded corners */
+    width: 30px; /* Fixed width */
+    height: 30px; /* Fixed height */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 18px; /* Font size */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.counter-btn:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: white; /* Change text color to white on hover */
+}
+
+/* Style for the trash icon */
+.trash-btn {
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor */
+    padding: 0; /* Remove padding */
+}
+
+/* Style for the trash icon image */
+.trash-btn img {
+    width: 25px; /* Set the width of the icon */
+    height: 25px; /* Set the height of the icon */
+    transition: transform 0.2s; /* Transition for hover effect */
+}
+
+.trash-btn:hover img {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+/* Improved style for Add to Box button */
+.add-to-box-btn {
+    background-color: #007bff; /* Blue color for consistency */
+    color: white; /* White text color */
+    padding: 10px 15px; /* Padding for better appearance */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    text-transform: uppercase; /* Uppercase text for emphasis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s, transform 0.2s; /* Transition for hover effect */
+    margin-top: 15px; /* Space above the button */
+}
+
+.add-to-box-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}

@@ -7,6 +7,38 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/menu_list.css' %}">
     <script>
+        // Increase the counter
+        function increaseCounter(itemId) {
+            const counter = document.getElementById(`counter-${itemId}`);
+            counter.textContent = parseInt(counter.textContent) + 1;
+        }
+
+        // Decrease the counter but not below 0
+        function decreaseCounter(itemId) {
+            const counter = document.getElementById(`counter-${itemId}`);
+            let count = parseInt(counter.textContent);
+            if (count > 0) {
+                counter.textContent = count - 1;
+            }
+        }
+
+        // Reset the counter to 0
+        function resetCounter(itemId) {
+            const counter = document.getElementById(`counter-${itemId}`);
+            counter.textContent = 0;
+        }
+
+        // Simulate adding the item to the shopping box
+        function addToBox(itemId) {
+            const counter = document.getElementById(`counter-${itemId}`).textContent;
+            if (parseInt(counter) > 0) {
+                alert(`Added ${counter} of item ${itemId} to the shopping box!`);
+            } else {
+                alert('Please add at least 1 item to the shopping box.');
+            }
+        }
+
+        // Search functionality
         function searchItems() {
             const input = document.getElementById('search-input').value.toLowerCase();
             const items = document.querySelectorAll('.menu-item');
@@ -23,7 +55,7 @@
 </head>
 <body>
     <h1>Our Menu</h1>
-    
+
     <!-- Search Bar -->
     <div class="search-bar">
         <input type="text" id="search-input" placeholder="Search for items..." onkeyup="searchItems()">
@@ -44,10 +76,24 @@
             {% for item in menu_items %}
                 {% if item.category == "starter" %}
                     <div class="menu-item">
-                        <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-item-image">
-                        <h2>{{ item.name }}</h2>
-                        <p>{{ item.price }} USD</p>
-                        <a href="{% url 'menu_detail' item.pk %}" class="btn">View Details</a>
+                        <!-- Link to the item's detail page -->
+                        <a href="{% url 'menu_detail' item.pk %}" class="menu-item-link">
+                            <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-item-image">
+                            <h2>{{ item.name }}</h2>
+                            <p>{{ item.price }} USD</p>
+                        </a>
+
+                        <!-- Counter -->
+                        <div class="counter">
+                            <button class="counter-btn" onclick="decreaseCounter('{{ item.pk }}')">-</button>
+                            <span id="counter-{{ item.pk }}">0</span>
+                            <button class="counter-btn" onclick="increaseCounter('{{ item.pk }}')">+</button>
+                            <button class="trash-btn" onclick="resetCounter('{{ item.pk }}')">
+                                <img src="{% static 'icons/trash_icon.png' %}" alt="Reset">
+                            </button>
+                        </div>
+
+                        <button class="add-to-box-btn" onclick="addToBox('{{ item.pk }}')">Add to Box</button>
                     </div>
                 {% endif %}
             {% endfor %}
@@ -61,10 +107,23 @@
             {% for item in menu_items %}
                 {% if item.category == "sushi_roll" %}
                     <div class="menu-item">
-                        <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-item-image">
-                        <h2>{{ item.name }}</h2>
-                        <p>{{ item.price }} USD</p>
-                        <a href="{% url 'menu_detail' item.pk %}" class="btn">View Details</a>
+                        <a href="{% url 'menu_detail' item.pk %}" class="menu-item-link">
+                            <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-item-image">
+                            <h2>{{ item.name }}</h2>
+                            <p>{{ item.price }} USD</p>
+                        </a>
+
+                        <!-- Counter -->
+                        <div class="counter">
+                            <button class="counter-btn" onclick="decreaseCounter('{{ item.pk }}')">-</button>
+                            <span id="counter-{{ item.pk }}">0</span>
+                            <button class="counter-btn" onclick="increaseCounter('{{ item.pk }}')">+</button>
+                            <button class="trash-btn" onclick="resetCounter('{{ item.pk }}')">
+                                <img src="{% static 'icons/trash_icon.png' %}" alt="Reset">
+                            </button>
+                        </div>
+
+                        <button class="add-to-box-btn" onclick="addToBox('{{ item.pk }}')">Add to Box</button>
                     </div>
                 {% endif %}
             {% endfor %}
@@ -78,10 +137,23 @@
             {% for item in menu_items %}
                 {% if item.category == "main_course" %}
                     <div class="menu-item">
-                        <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-item-image">
-                        <h2>{{ item.name }}</h2>
-                        <p>{{ item.price }} USD</p>
-                        <a href="{% url 'menu_detail' item.pk %}" class="btn">View Details</a>
+                        <a href="{% url 'menu_detail' item.pk %}" class="menu-item-link">
+                            <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-item-image">
+                            <h2>{{ item.name }}</h2>
+                            <p>{{ item.price }} USD</p>
+                        </a>
+
+                        <!-- Counter -->
+                        <div class="counter">
+                            <button class="counter-btn" onclick="decreaseCounter('{{ item.pk }}')">-</button>
+                            <span id="counter-{{ item.pk }}">0</span>
+                            <button class="counter-btn" onclick="increaseCounter('{{ item.pk }}')">+</button>
+                            <button class="trash-btn" onclick="resetCounter('{{ item.pk }}')">
+                                <img src="{% static 'icons/trash_icon.png' %}" alt="Reset">
+                            </button>
+                        </div>
+
+                        <button class="add-to-box-btn" onclick="addToBox('{{ item.pk }}')">Add to Box</button>
                     </div>
                 {% endif %}
             {% endfor %}
@@ -95,10 +167,23 @@
             {% for item in menu_items %}
                 {% if item.category == "drink" %}
                     <div class="menu-item">
-                        <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-item-image">
-                        <h2>{{ item.name }}</h2>
-                        <p>{{ item.price }} USD</p>
-                        <a href="{% url 'menu_detail' item.pk %}" class="btn">View Details</a>
+                        <a href="{% url 'menu_detail' item.pk %}" class="menu-item-link">
+                            <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-item-image">
+                            <h2>{{ item.name }}</h2>
+                            <p>{{ item.price }} USD</p>
+                        </a>
+
+                        <!-- Counter -->
+                        <div class="counter">
+                            <button class="counter-btn" onclick="decreaseCounter('{{ item.pk }}')">-</button>
+                            <span id="counter-{{ item.pk }}">0</span>
+                            <button class="counter-btn" onclick="increaseCounter('{{ item.pk }}')">+</button>
+                            <button class="trash-btn" onclick="resetCounter('{{ item.pk }}')">
+                                <img src="{% static 'icons/trash_icon.png' %}" alt="Reset">
+                            </button>
+                        </div>
+
+                        <button class="add-to-box-btn" onclick="addToBox('{{ item.pk }}')">Add to Box</button>
                     </div>
                 {% endif %}
             {% endfor %}
