@@ -1,25 +1,28 @@
+html {
+    scroll-behavior: smooth;
+}
+
 /* General styles for the menu list page */
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9; /* Light background color */
     margin: 0;
     padding: 20px;
+    scroll-behavior: smooth;
 }
 
 /* Header style */
 h1 {
     text-align: center; /* Center the header */
     margin-bottom: 10px; /* Adjust margin for spacing */
-    color: #2c3e50; /* Darker color for contrast */
+    color: #ffffff; /* White text color for contrast */
     font-size: 3rem; /* Larger font size */
     font-weight: bold; /* Make the font bold */
     text-transform: uppercase; /* Uppercase for emphasis */
     letter-spacing: 2px; /* Spacing between letters */
-    border-bottom: 2px solid #007bff; /* Bottom border for emphasis */
-    padding-bottom: 10px; /* Space between text and border */
-    background: linear-gradient(to right, #007bff, #00bfff); /* Gradient background */
-    color: white; /* White text color for contrast against the background */
+    background-color: #17a2b8; /* Header background color */
     border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Space around header text */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
 }
 
@@ -37,7 +40,7 @@ h1 {
 .nav-link {
     margin: 0 15px; /* Space between links */
     padding: 10px 15px; /* Padding for clickable area */
-    background-color: #007bff; /* Button color */
+    background-color: #17a2b8; /* Button color */
     color: white; /* Text color */
     text-decoration: none; /* Remove underline */
     border-radius: 4px; /* Rounded corners */
@@ -45,7 +48,7 @@ h1 {
 }
 
 .nav-link:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #138496; /* Darker shade on hover */
 }
 
 /* Container for menu items */
@@ -58,7 +61,7 @@ h1 {
 
 /* Style for each menu item */
 .menu-item {
-    background-color: #fff; /* White background for each item */
+    background-color: #ffffff; /* White background for each item */
     border: 1px solid #ddd; /* Light border for definition */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -97,7 +100,7 @@ h1 {
 /* Style for buttons */
 .btn {
     display: inline-block; /* Inline block for button */
-    background-color: #007bff; /* Bootstrap primary color */
+    background-color: #17a2b8; /* Primary color */
     color: white; /* White text color */
     padding: 10px 15px; /* Padding for button */
     text-decoration: none; /* Remove underline */
@@ -107,7 +110,7 @@ h1 {
 
 /* Hover effect for buttons */
 .btn:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #138496; /* Darker shade on hover */
 }
 
 /* Style for each menu section */
@@ -132,7 +135,7 @@ h1 {
 }
 
 .search-bar input:focus {
-    border-color: #007bff; /* Change border color on focus */
+    border-color: #17a2b8; /* Change border color on focus */
     outline: none; /* Remove outline */
 }
 
@@ -148,8 +151,8 @@ h1 {
 /* Simpler style for the - and + buttons */
 .counter-btn {
     background-color: transparent; /* Transparent background */
-    color: #007bff; /* Blue color for the text */
-    border: 1px solid #007bff; /* Blue border */
+    color: #17a2b8; /* Blue color for the text */
+    border: 1px solid #17a2b8; /* Blue border */
     border-radius: 4px; /* Rounded corners */
     width: 30px; /* Fixed width */
     height: 30px; /* Fixed height */
@@ -159,7 +162,7 @@ h1 {
 }
 
 .counter-btn:hover {
-    background-color: #007bff; /* Blue background on hover */
+    background-color: #17a2b8; /* Blue background on hover */
     color: white; /* Change text color to white on hover */
 }
 
@@ -184,7 +187,7 @@ h1 {
 
 /* Improved style for Add to Box button */
 .add-to-box-btn {
-    background-color: #007bff; /* Blue color for consistency */
+    background-color: #17a2b8; /* Consistent color */
     color: white; /* White text color */
     padding: 10px 15px; /* Padding for better appearance */
     border: none; /* Remove border */
@@ -198,6 +201,25 @@ h1 {
 }
 
 .add-to-box-btn:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #138496; /* Darker shade on hover */
     transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.cart-summary {
+    margin-left: auto;
+}
+
+nav .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }

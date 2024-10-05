@@ -1,0 +1,121 @@
+/* Cart Summary Page Styling */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #17a2b8;
+    padding: 10px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cart-summary {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.cart-summary:hover {
+    color: #ffffff;
+}
+
+.cart-summary .cart-icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+#cart-quantity {
+    background-color: white;
+    color: #17a2b8;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table thead th {
+    background-color: #17a2b8;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+table tbody img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+table tfoot th {
+    padding: 10px;
+    text-align: right;
+    background-color: #f1f1f1;
+}
+
+tfoot th {
+    color: #17a2b8;
+    font-size: 16px;
+}
+
+.custom-delete-button {
+    background-color: #dc3545; /* Bootstrap danger color */
+    color: white;              /* Set text color to white */
+    border: none;              /* Remove default border */
+    padding: 8px 16px;         /* Add more padding for better size */
+    border-radius: 4px;        /* Rounded corners */
+    font-weight: bold;         /* Bold text for emphasis */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.custom-delete-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+    transform: scale(1.05);     /* Slightly increase size on hover */
+}
+
+.custom-delete-button:focus {
+    outline: none;              /* Remove outline on focus */
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.5); /* Add a subtle shadow */
+}
+
+/* Empty Cart Message */
+p {
+    font-size: 18px;
+    color: #555555;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}

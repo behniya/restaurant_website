@@ -42,7 +42,7 @@ h1 {
     width: 250px;
     margin: 15px auto;
     padding: 15px 0;
-    background-color: #28a745; /* Green color for the buttons */
+    background-color: #17a2b8; /* Green color for the buttons */
     color: white;
     border: none;
     border-radius: 8px;
@@ -54,12 +54,12 @@ h1 {
 }
 
 .btn:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #138496; /* Darker green on hover */
     transform: translateY(-3px); /* Slight hover lift */
 }
 
 .btn:active {
-    background-color: #1e7e34; /* Even darker green when clicked */
+    background-color: #137281; /* Even darker green when clicked */
     transform: translateY(0); /* No lift on click */
 }
 
@@ -131,3 +131,35 @@ nav {
 .profile-btn:hover {
     background-color: #138496; /* Darker Teal on hover */
 }
+
+.cart-summary {
+    margin-left: auto;
+}
+
+/* Basket icon button style */
+.cart-summary {
+    display: flex;
+    align-items: center;    /* Centers the icon vertically */
+    justify-content: center; /* Centers the icon horizontally */
+    padding: 5px 8px;       /* Slightly adjusted padding */
+    background-color: #17a2b8; /* Same mellow blue as the profile button */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;     /* Smaller border-radius for compactness */
+    font-size: 12px;        /* Slightly smaller font size */
+    transition: background-color 0.3s ease;
+    max-width: 80px;        /* Set max-width to reduce length */
+    overflow: hidden;       /* Ensures the content doesn't overflow */
+}
+
+.cart-summary svg {
+    width: 20px; /* Keep icon size as is */
+    height: 20px; /* Keep icon size as is */
+    fill: white; /* Ensures the basket icon remains white */
+}
+
+.cart-summary:hover {
+    background-color: #138496; /* Darker blue on hover */
+}
+
+
